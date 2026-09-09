@@ -198,6 +198,7 @@ const cardColor1 = "silver";
 let cardColor2 = "GoldenRod";
 let cardColor3 = "Salmon";
 let cardColor4 = "SkyBlue";
+let cardColor5 = "black";
 const fontColor = "Black";
 const gridTracker = [];
 
@@ -240,7 +241,7 @@ function revealAnswers() {
                     }
                     break;
                 case "assassin":
-                    gridTracker[i] = 0;
+                    gridTracker[i] = 5;
                     break;
                 case "bystander":
                     gridTracker[i] = 1;
@@ -385,6 +386,7 @@ function rebuildGrid() {
     cardColor3 = document.getElementById("team1Color").value;
     cardColor4 = document.getElementById("team2Color").value;
     cardColor2 = document.getElementById("bystanderColor").value;
+    cardColor5 = document.getElementById("assassinColor").value;
 
     let k = 0;
 
@@ -406,6 +408,9 @@ function rebuildGrid() {
                 case 4:
                     buildRectangle(cardColor1,j,i,k);
                     gridTracker[k] = 0;
+                    break;
+                case 5:
+                    buildRectangle(cardColor5,j,i,k);
                     break;
             }
             k++;

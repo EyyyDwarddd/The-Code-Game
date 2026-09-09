@@ -1,16 +1,15 @@
 # The Code Game
-Play here: http://thecompletelysurrounded.com/games/code
+Play here: lorem ipsum
 
 This is a tribute to a party game that I love - you should go buy a copy for yourself! I included some mods for you to play with, such as the ability to alter the number of hidden agents per team, the amount of assassins and even the amount of cards! The game uses my personal word list, which I made when creating a card game called The Good, the Bad &amp; the Funny. Please let me know if you would like additional features or find any bugs.
 
 Explanation video:
 https://youtu.be/x6a3Z1Jq2hQ
 
-Please hit me up with any questions (@greenghoulie)
 
 # Game Setup
  
-Share the main board on the big screen or as a shared desktop/window. The player with access to the mouse is in charge of keeping the board updated with guesses by clicking on the individual “cards.” Each card cycles through the team colors, the bystander color (yellow), and gray. There is no public color for the Assassin as if the Assassin is “uncovered” the game is over.
+Share the main board on the big screen or as a shared desktop/window. The player with access to the mouse is in charge of keeping the board updated with guesses by clicking on the individual “cards.” Each card cycles through the team colors, the bystander color (yellow), and gray. If the player unfortunately chooses the Assassin card, the card will turn black.
 
 The team Captains find the Game ID number and enter that into her or his private view (via phone or similar). Be sure to copy the same game options if any are changed, to ensure the board is the same. The Captains with a private view can use the “Reveal Hidden Cards” link to see the locations of all of the cards, noting that the Assassin stays gray (I’ll likely change that in the next version!).
 
@@ -24,6 +23,6 @@ For example, if there is a Blue Agent under "House" and a Blue Agent under "Rive
 
 The team that can find all of the team Agents first wins the game.
     
-Hidden under each word is either a Team Agent (Red or Blue), a Bystander (Yellow), or an Assassin (indicated as Gray when the colors are revealed). During a team turn, the Captain gives a single clue that refers to one or more hidden agents. The other team players then make a guess and, if correct, can choose to continue and make another guess. If an Agent for the other team is revealed or a Bystander is revealed, the turn ends. If an Assassin is revealed, the game is over and that team loses immediately!
+Hidden under each word is either a Team Agent (Red or Blue), a Bystander (Yellow), or an Assassin (BLACK). During a team turn, the Captain gives a single clue that refers to one or more hidden agents. The other team players then make a guess and, if correct, can choose to continue and make another guess. If an Agent for the other team is revealed or a Bystander is revealed, the turn ends. If an Assassin is revealed, the game is over and that team loses immediately!
     
 Captains are not allowed to give ANY other clues at all - none via facial movements or sounds or encouragements (no “table talk”).

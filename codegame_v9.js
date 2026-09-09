@@ -308,12 +308,17 @@ function dealWithKeyboard(e) {
 //here I'm tracking the mouse so clicks/taps work
 function dealWithMouse(e) {
     let k = 0;
+    //measure the click relative to where the canvas actually sits on the page right now,
+    //not relative to the browser window -- this keeps clicks aligned even after scrolling
+    let canvasBounds = canvas.getBoundingClientRect();
+    let clickX = e.clientX - canvasBounds.left;
+    let clickY = e.clientY - canvasBounds.top;
     let tempWidth = $("#codenameCanvas").outerWidth($("#main-content").width());
     let tempHeight = $("#codenameCanvas").outerHeight($("#h-input").val());
 
     for (i = 0; i < gridHeight; i++) {
         for (j = 0; j < gridWidth; j++) {
-            if (j * (tempWidth / gridWidth) < e.x && e.x < (j+1) * (tempWidth / gridWidth) && i * (tempHeight / gridHeight) < e.y && e.y < (i + 1) * (tempHeight / gridHeight)) {
+            if (j * (tempWidth / gridWidth) < clickX && clickX < (j+1) * (tempWidth / gridWidth) && i * (tempHeight / gridHeight) < clickY && clickY < (i + 1) * (tempHeight / gridHeight)) {
                 if (gridTracker[k] === 0) {
                     //first click: reveal this card's true color
                     gridTracker[k] = getRevealedValue(hiddenCards[k]);

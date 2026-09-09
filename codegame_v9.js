@@ -430,9 +430,15 @@ function buildRectangle(myColor, j, i, k) {
     
     if(playMode==="words") {
         ctx.font = "small-caps bold " + fontSize + "px Arial";
-        ctx.fillStyle = fontColor;
+        ctx.fillStyle = (myColor === cardColor5) ? "white" : fontColor;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
 
-        ctx.fillText(wordList[k], j * (canvasWidth / gridWidth) + borderSpace, (i * (canvasHeight / gridHeight)) + (canvasHeight / gridHeight / 2 + 5));
+        ctx.fillText(
+            wordList[k],
+            j * (canvasWidth / gridWidth) + (canvasWidth / gridWidth - borderSpace) / 2,
+            i * (canvasHeight / gridHeight) + (canvasHeight / gridHeight - borderSpace) / 2
+        );
     } else if (playMode==="icons") {
         let image = new Image();
         console.log("grid height - " + gridHeight + "  grid width - " + gridWidth);

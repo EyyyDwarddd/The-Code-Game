@@ -219,34 +219,31 @@ $(document).ready(function(){
 
 });
 
+//maps a card's true hidden type ("team1", "team2", "assassin", "bystander") to the gridTracker
+//value that makes it draw in the correct color. Shared by revealAnswers() and dealWithMouse()
+//so both use the exact same answer key.
+function getRevealedValue(cardType) {
+    switch (cardType) {
+        case "team1":
+            return (_firstTeam === teamColor1) ? 2 : 3;
+        case "team2":
+            return (_firstTeam === teamColor1) ? 3 : 2;
+        case "assassin":
+            return 5;
+        case "bystander":
+            return 1;
+        default:
+            return 0;
+    }
+}
+
 //when I click "Reveal Answers," this is what I see
 function revealAnswers() {
 
     if (document.getElementById("revealButton").innerText === "Reveal Hidden Cards") {
 
         for (let i = 0; i < hiddenCards.length; i++) {
-            switch (hiddenCards[i]){
-                case "team1":
-                    if (_firstTeam===teamColor1) {
-                        gridTracker[i] = 2;
-                    } else {
-                        gridTracker[i] = 3;
-                    }
-                    break;
-                case "team2":
-                    if (_firstTeam===teamColor1) {
-                        gridTracker[i] = 3;
-                    } else {
-                        gridTracker[i] = 2;
-                    }
-                    break;
-                case "assassin":
-                    gridTracker[i] = 5;
-                    break;
-                case "bystander":
-                    gridTracker[i] = 1;
-                    break;
-            }
+            gridTracker[i] = getRevealedValue(hiddenCards[i]);
         }
         rebuildGrid();
         document.getElementById("revealButton").innerText = "Hide Hidden Cards";
@@ -317,7 +314,13 @@ function dealWithMouse(e) {
     for (i = 0; i < gridHeight; i++) {
         for (j = 0; j < gridWidth; j++) {
             if (j * (tempWidth / gridWidth) < e.x && e.x < (j+1) * (tempWidth / gridWidth) && i * (tempHeight / gridHeight) < e.y && e.y < (i + 1) * (tempHeight / gridHeight)) {
-                gridTracker[k]++;
+                if (gridTracker[k] === 0) {
+                    //first click: reveal this card's true color
+                    gridTracker[k] = getRevealedValue(hiddenCards[k]);
+                } else {
+                    //second click: flip it back to blank (undo a misclick)
+                    gridTracker[k] = 0;
+                }
             }
 
             k++;
